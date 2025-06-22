@@ -133,6 +133,13 @@ body {
   margin-bottom: 8px;
 }
 
+
+
+.podcast-updated {
+  color: #888;
+  font-size: 0.97em;
+}
+/* Genre badge: light grey background + shadow */
 .genre-badge {
   background: #f2f2f2;
   border-radius: 12px;
@@ -140,11 +147,13 @@ body {
   font-size: 0.93em;
   color: #333;
   font-weight: 500;
+  box-shadow: 0 1px 4px rgba(180,180,180,0.14); /* subtle shadow */
 }
 
+/* Season number and updated time: light grey text */
+.podcast-meta .seasons,
 .podcast-updated {
-  color: #888;
-  font-size: 0.97em;
+  color: #b0b0b0;
 }
 
 /* Modal */
@@ -217,6 +226,38 @@ body {
   flex-wrap: wrap;
   gap: 8px;
   margin: 8px 0;
+}
+/* Modal genre badge: pill style, shadow, light grey */
+.genres-list .genre-badge {
+  background: #f2f2f2;
+  border-radius: 999px;
+  padding: 5px 16px;
+  font-size: 1em;
+  color: #333;
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(180,180,180,0.14);
+  display: inline-block;
+  margin-right: 8px;
+  margin-bottom: 6px;
+}
+
+/* Modal season and updated text: light grey */
+.modal-updated,
+.season-episodes {
+  color: #b0b0b0;
+  font-size: 1em;
+}
+
+/* Modal season row: light border, rounded, padding */
+.season-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  border: 1px solid #eee;
 }
 
 .modal-updated {

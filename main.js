@@ -1,3 +1,6 @@
+import { setupModal } from './modal.js';
+import { renderPodcasts } from './preview.js';
+
 // Podcast data
 const podcasts = [
   {
@@ -122,69 +125,8 @@ const podcasts = [
   }
 ];
 
-// Render podcast cards
-function renderPodcasts(list) {
-  const container = document.getElementById('podcast-container');
-  container.innerHTML = '';
-  list.forEach((podcast, idx) => {
-    const card = document.createElement('div');
-    card.className = 'podcast-card';
-    card.tabIndex = 0;
-    card.setAttribute('role', 'button');
-    card.setAttribute('aria-label', podcast.title);
-    card.innerHTML = `
-      <img src="${podcast.cover}" alt="${podcast.title} Cover" class="podcast-cover" />
-      <h3>${podcast.title}</h3>
-      <div class="podcast-meta">
-        <span class="seasons">📅 ${podcast.seasons} season${podcast.seasons > 1 ? 's' : ''}</span>
-      </div>
-      <div class="podcast-genres">
-        ${podcast.genres.map(g => `<span class="genre-badge">${g}</span>`).join('')}
-      </div>
-      <div class="podcast-updated">Updated ${podcast.updated}</div>
-    `;
-    card.addEventListener('click', () => openModal(idx));
-    card.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') openModal(idx);
-    });
-    container.appendChild(card);
-  });
-}
-
-// Modal logic
-const modal = document.getElementById('podcast-modal');
-const modalClose = document.getElementById('modal-close');
-function openModal(idx) {
-  const p = podcasts[idx];
-  document.getElementById('modal-title').textContent = p.title;
-  document.getElementById('modal-cover-img').src = p.cover;
-  document.getElementById('modal-cover-img').alt = p.title + " Cover";
-  document.getElementById('modal-description').textContent = p.description;
-  document.getElementById('modal-genres-list').innerHTML = p.genres.map(g => `<span class="genre-badge">${g}</span>`).join('');
-  document.getElementById('modal-last-updated').textContent = p.updated;
-  document.getElementById('modal-seasons-list').innerHTML = p.seasonList.map(s =>
-    `<div class="season-row">
-      <div>
-        <strong>${s.title}</strong>
-        <div class="season-desc">${s.desc}</div>
-      </div>
-      <div class="season-episodes">${s.episodes} episode${s.episodes > 1 ? 's' : ''}</div>
-    </div>`
-  ).join('');
-  modal.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-function closeModal() {
-  modal.style.display = 'none';
-  document.body.style.overflow = '';
-}
-modalClose.addEventListener('click', closeModal);
-window.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal();
-});
-modal.addEventListener('click', e => {
-  if (e.target === modal) closeModal();
-});
+// Setup modal and get openModal function
+const openModal = setupModal(podcasts);
 
 // Search, filter, sort
 const searchInput = document.getElementById('search-input');
@@ -199,7 +141,7 @@ function filterAndRender() {
     filtered = filtered.filter(p =>
       p.title.toLowerCase().includes(search) ||
       p.genres.some(g => g.toLowerCase().includes(search))
-    );
+      );
   }
   // Genre
   const genre = genreSelect.value;
@@ -212,8 +154,7 @@ function filterAndRender() {
   else if (sort === "Z-A") filtered.sort((a, b) => b.title.localeCompare(a.title));
   else if (sort === "Newest") filtered.sort((a, b) => b.updated.localeCompare(a.updated));
   else if (sort === "Oldest") filtered.sort((a, b) => a.updated.localeCompare(b.updated));
-  // Most Popular/Recently Updated: keep as is or implement logic if you have data
-  renderPodcasts(filtered);
+  renderPodcasts(filtered, openModal); // Pass openModal!
 }
 
 searchInput.addEventListener('input', filterAndRender);
@@ -221,4 +162,4 @@ genreSelect.addEventListener('change', filterAndRender);
 sortSelect.addEventListener('change', filterAndRender);
 
 // Initial render
-renderPodcasts(podcasts);
+renderPodcasts(podcasts, openModal);
