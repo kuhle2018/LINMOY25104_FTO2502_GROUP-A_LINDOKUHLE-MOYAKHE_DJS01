@@ -269,6 +269,31 @@ body {
 .modal-seasons {
   margin-top: 18px;
 }
+/* Make modal overlay always fill the screen */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto; /* allow scrolling if needed */
+}
+
+/* Make modal-content scrollable if too tall */
+.modal-content {
+  background: #fff;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 95vw;
+  max-height: 90vh; /* limit height */
+  overflow-y: auto; /* enable vertical scroll */
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+  padding: 32px 32px 24px 32px;
+  position: relative;
+}
 
 .season-list {
   display: flex;
@@ -358,5 +383,56 @@ body {
   }
   .modal-content {
     padding: 12px;
+  }
+}
+/* Responsive adjustments for mobile */
+@media (max-width: 700px) {
+  .filters {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+  .filters label,
+  .filters select,
+  .filters input {
+    width: 100%;
+    font-size: 1em;
+  }
+  .podcast-card {
+    margin: 12px 0;
+    padding: 16px 8px;
+    border-radius: 12px;
+  }
+  .podcast-cover {
+    width: 100%;
+    height: auto;
+    min-height: 140px;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .podcast-meta,
+  .podcast-genres,
+  .podcast-updated {
+    font-size: 1em;
+  }
+  .modal-content {
+    max-width: 98vw;
+    padding: 12px 4vw;
+    max-height: 96vh;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 400px) {
+  .header-logo {
+    width: 32px;
+    height: 32px;
+  }
+  .header h1 {
+    font-size: 1.2em;
+  }
+  .modal-content {
+    padding: 6px 2vw;
   }
 }

@@ -13,13 +13,15 @@
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDWC5SM8O6vu0ymMG_8DTiA203Uqva4v-lhg&s" alt="Podcast App Logo" class="header-logo"/>
     <h1>Podcast App</h1>
     <div class="header-right">
-    <input type="text" placeholder="Search..." class="search-bar" />
+    <div id="search" >🔍</div>
+    <input id="search-input" type="text" placeholder="Search podcasts..." />
     <img src="https://img.freepik.com/premium-vector/woman-profile-icon-with-voice-waves-symbol-podcast-audiobook-with-female-head-audio-translator_653980-388.jpg?w=360" alt="User" class="user-face" />
   </div>
   </header>
 
   <!-- FILTERS (below header) -->
 <div class="filters">
+  <input id="search-input" type="text" placeholder="Search podcasts..." />
   <label for="genre-select">Filter by:</label>
   <select id="genre-select" class="genre-dropdown">
     <option>All Genres</option>
@@ -39,7 +41,7 @@
     <option>TV & Film</option>
   </select>
 
-  <select class="recent-dropdown">
+  <select id="sort-select" class="recent-dropdown">
     <option>Recently Updated</option>
     <option>Most Popular</option>
     <option>Newest</option>
@@ -49,659 +51,101 @@
   </select>
 </div>
    
-
-  <!-- MAIN GRID -->
-  <main>
-    <div id="podcast-container">
+<!-- MAIN GRID --> 
+<main>
+ <div id="podcast-container">
   <div class="podcast-card">
-    <img src="https://dc-mkt-prod.cloud.bosch.tech/hu/media/campaigns/techtalk/techtalk_cover.jpg" alt="Tech talks" class="podcast-cover" />
-    <h3><strong>Tech Talk</strong></h3>
-    <p>📅 4 Seasons</p>
-  <p><strong>Genre:</strong> Technology , Business</p>
-  <p><strong>Last Updated:</strong> 2 days ago</p>
+<img src="https://dc-mkt-prod.cloud.bosch.tech/hu/media/campaigns/techtalk/techtalk_cover.jpg" alt="Tech talks" class="podcast-cover" />    
+<h3><strong>Tech Talk</strong></h3>
+<p> 4 Seasons</p>
+<p><strong>Genre:</strong> Technology , Business</p>
+<p><strong>Last Updated:</strong> 2 days ago</p>
 </div>
 
-  <div class="podcast-card">
-    <img src="https://marketplace.canva.com/EAFvFNP4kZE/2/0/1600w/canva-black-red-bold-collage-podcast-cover-AFRpXsUBk2E.jpg" alt="Crime Files" class="podcast-cover" />
-    <h3><strong>Crime Files</strong></h3>
-    <p>📅 6 Seasons</p>
+<div class="podcast-card">
+  <img src="https://marketplace.canva.com/EAFvFNP4kZE/2/0/1600w/canva-black-red-bold-collage-podcast-cover-AFRpXsUBk2E.jpg" alt="Crime Files" class="podcast-cover" /> 
+  <h3><strong>Crime Files</strong></h3>
+  <p> 6 Seasons</p>
   <p><strong>Genre:</strong> True crime , Mystery</p>
   <p><strong>Last Updated:</strong> 2 weeks ago</p>
-</div>
+  </div>
 
   <div class="podcast-card">
     <img src="https://media.invisioncic.com/j283755/monthly_2024_09/laugh-lounge-logo_3x2.jpeg.374e9b4e66b23ea0bc544dda5ed3df0d.jpeg" alt="Laugh Lounge" class="podcast-cover" />
     <h3><strong>Laugh Lounge</strong></h3>
-    <p>📅 2 Seasons</p>
-  <p><strong>Genre:</strong> Comedy , Entertainment</p>
-  <p><strong>Last Updated:</strong> 3 days ago</p>
-</div>
+    <p> 2 Seasons</p>
+    <p><strong>Genre:</strong> Comedy , Entertainment</p>
+    <p><strong>Last Updated:</strong> 3 days ago</p>
+  </div>
 
   <div class="podcast-card">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC-qtcbTj8dhLBpoSyI6c3TYcMbPclIkea8A&s" alt="Startup stories" class="podcast-cover" />
     <h3><strong>Startup Stories</strong></h3>
-    <p>📅 4 Seasons</p>
-  <p><strong>Genre:</strong> Business , Entrepreneurship</p>
-  <p><strong>Last Updated:</strong> 5 days ago</p>
-</div>
+    <p> 4 Seasons</p>
+    <p><strong>Genre:</strong> Business , Entrepreneurship</p>
+    <p><strong>Last Updated:</strong> 5 days ago</p> 
+  </div>
 
   <div class="podcast-card">
     <img src="https://blog.feedspot.com/wp-content/uploads/2018/10/health-podcast-copy.jpg" alt="Healthy Living" class="podcast-cover" />
     <h3><strong>Healthy Living</strong></h3>
-    <p>📅 6 Seasons</p>
-  <p><strong>Genre:</strong> Health , Lifesyle</p>
-  <p><strong>Last Updated:</strong> 1 day ago</p>
-</div>
+    <p> 6 Seasons</p>
+    <p><strong>Genre:</strong> Health , Lifesyle</p>
+    <p><strong>Last Updated:</strong> 1 day ago</p>
+  </div>
 
-  <div class="podcast-card">
-    <img src="https://discoverpods.com/wp-content/uploads/2024/02/Best-Podcast-About-History-Header-660x377.jpg" alt="Past and Present" class="podcast-cover" />
-    <h3><strong>Past & Present</strong></h3>
-    <p>📅 7 Seasons</p>
+<div class="podcast-card">
+  <img src="https://discoverpods.com/wp-content/uploads/2024/02/Best-Podcast-About-History-Header-660x377.jpg" alt="Past and Present" class="podcast-cover" />
+  <h3><strong>Past & Present</strong></h3>
+  <p> 7 Seasons</p>
   <p><strong>Genre:</strong> History , Education</p>
   <p><strong>Last Updated:</strong> 1 day ago</p>
 </div>
 
-  <div class="podcast-card">
-    <img src="https://ichef.bbci.co.uk/images/ic/1200x675/p0bw3n71.jpg" alt="Sports Desk" class="podcast-cover" />
-    <h3><strong>Sports Desk</strong></h3>
-    <p>📅 8 Seasons</p>
+<div class="podcast-card">
+  <img src="https://ichef.bbci.co.uk/images/ic/1200x675/p0bw3n71.jpg" alt="Sports Desk" class="podcast-cover" />
+  <h3><strong>Sports Desk</strong></h3>
+  <p> 8 Seasons</p>
   <p><strong>Genre:</strong> Sports , News</p>
   <p><strong>Last Updated:</strong> 6 days ago</p>
 </div>
 
-  <div class="podcast-card">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeRXFK0DY_9P54-tpSGESxcD3jqcQb9BF3xg&s" alt="Nature Lab" class="podcast-cover" />
-    <h3><strong>Nature Lab</strong></h3>
-    <p>📅 3 Seasons</p>
+ <div class="podcast-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeRXFK0DY_9P54-tpSGESxcD3jqcQb9BF3xg&s" alt="Nature Lab" class="podcast-cover" />
+  <h3><strong>Nature Lab</strong></h3><p> 3 Seasons</p>
   <p><strong>Genre:</strong> Science , Nature</p>
   <p><strong>Last Updated:</strong> 1 week ago</p>
 </div>
 </div>
-  </main>
 
-  <!-- MODAL -->
-  <!-- Podcast Modal -->
+<!-- Podcast Modal (single, dynamic) -->
 <div id="podcast-modal" class="modal" style="display:none;">
   <div class="modal-content">
-    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <span class="close-btn" id="modal-close">&times;</span>
     <div class="modal-header">
-      <h2 id="modal-title">Tech talks</h2>
+      <h2 id="modal-title"></h2>
     </div>
     <div class="modal-body">
       <div class="modal-cover">
-        <img id="modal-cover-img" src="https://dc-mkt-prod.cloud.bosch.tech/hu/media/campaigns/techtalk/techtalk_cover.jpg" alt="Podcast Cover" />
+        <img id="modal-cover-img" src="" alt="Podcast Cover" />
       </div>
       <div class="modal-info">
         <div class="modal-description">
           <h3>Description</h3>
-          <p id="modal-description">
-            Join us every week as we dive deep into the latest technology trends, innovations, and industry insights. From artificial intelligence and machine learning to startup culture and digital transformation, we explore the forces shaping our digital future. Each episode features expert interviews, case studies, and actionable insights for professionals and enthusiasts alike.
-          </p>
+          <p id="modal-description"></p>
         </div>
         <div class="modal-genres">
           <h4>Genres</h4>
-          <div id="modal-genres-list" class="genres-list">
-            <span class="genre-badge">Technology</span>
-            <span class="genre-badge">Business</span>
-            <span class="genre-badge">Innovation</span>
-            <span class="genre-badge">Entrepreneurship</span>
-          </div>
+          <div id="modal-genres-list" class="genres-list"></div>
           <div class="modal-updated">
-            <span>📅 Last updated: <span id="modal-last-updated">2 days ago</span></span>
+            <span>📅 Last updated: <span id="modal-last-updated"></span></span>
           </div>
         </div>
       </div>
     </div>
     <div class="modal-seasons">
       <h3>Seasons</h3>
-      <div class="season-list">
-        <div class="season-row">
-          <div>
-            <strong>Season 1: Getting Started</strong>
-            <div class="season-desc">Introduction to the fundamentals</div>
-          </div>
-          <div class="season-episodes">12 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 2: Advanced Topics</strong>
-            <div class="season-desc">Deep dives into complex subjects</div>
-          </div>
-          <div class="season-episodes">15 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 3: Industry Insights</strong>
-            <div class="season-desc">Expert perspectives and case studies</div>
-          </div>
-          <div class="season-episodes">18 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 4: Future Trends</strong>
-            <div class="season-desc">What's coming next in tech</div>
-          </div>
-          <div class="season-episodes">20 episodes</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Crime Files Modal -->
-<div id="crimefiles-modal" class="modal" style="display:none;">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeCrimeFilesModal()">&times;</span>
-    <div class="modal-header">
-      <h2 id="modal-title">Crime Files</h2>
-    </div>
-    <div class="modal-body">
-      <div class="modal-cover">
-        <img id="modal-cover-img" src="https://marketplace.canva.com/EAFvFNP4kZE/2/0/1600w/canva-black-red-bold-collage-podcast-cover-AFRpXsUBk2E.jpg" alt="Crime Files Cover" />
-      </div>
-      <div class="modal-info">
-        <div class="modal-description">
-          <h3>Description</h3>
-          <p id="modal-description">
-            Dive into the world of unsolved mysteries and gripping investigations. "Crime Files" explores real-life cases, forensic breakthroughs, and the minds behind the crimes. Each episode brings you closer to the truth with expert interviews and dramatic storytelling.
-          </p>
-        </div>
-        <div class="modal-genres">
-          <h4>Genres</h4>
-          <div id="modal-genres-list" class="genres-list">
-            <span class="genre-badge">True Crime</span>
-            <span class="genre-badge">Mystery</span>
-          </div>
-          <div class="modal-updated">
-            <span>📅 Last updated: <span id="modal-last-updated">2 weeks ago</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal-seasons">
-      <h3>Seasons</h3>
-      <div class="season-list">
-        <div class="season-row">
-          <div>
-            <strong>Season 1: The First Case</strong>
-            <div class="season-desc">A look at the origins of the series' most infamous case.</div>
-          </div>
-          <div class="season-episodes">10 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 2: Cold Trails</strong>
-            <div class="season-desc">Unsolved mysteries and the search for answers.</div>
-          </div>
-          <div class="season-episodes">12 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 3: Forensic Files</strong>
-            <div class="season-desc">How science helps crack the toughest cases.</div>
-          </div>
-          <div class="season-episodes">14 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 4: Criminal Minds</strong>
-            <div class="season-desc">Profiling the minds behind the crimes.</div>
-          </div>
-          <div class="season-episodes">16 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 5: Justice Served</strong>
-            <div class="season-desc">Cases that finally found closure.</div>
-          </div>
-          <div class="season-episodes">8 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 6: New Evidence</strong>
-            <div class="season-desc">Recent breakthroughs and reopened investigations.</div>
-          </div>
-          <div class="season-episodes">9 episodes</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Laugh Lounge Modal -->
-<div id="laughlounge-modal" class="modal" style="display:none;">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeLaughLoungeModal()">&times;</span>
-    <div class="modal-header">
-      <h2>Laugh Lounge</h2>
-    </div>
-    <div class="modal-body">
-      <div class="modal-cover">
-        <img src="https://media.invisioncic.com/j283755/monthly_2024_09/laugh-lounge-logo_3x2.jpeg.374e9b4e66b23ea0bc544dda5ed3df0d.jpeg" alt="Laugh Lounge Cover" />
-      </div>
-      <div class="modal-info">
-        <div class="modal-description">
-          <h3>Description</h3>
-          <p>
-            Unwind and laugh out loud with the best comedians and entertainers. "Laugh Lounge" brings you stand-up, sketches, and hilarious conversations every week.
-          </p>
-        </div>
-        <div class="modal-genres">
-          <h4>Genres</h4>
-          <div class="genres-list">
-            <span class="genre-badge">Comedy</span>
-            <span class="genre-badge">Entertainment</span>
-          </div>
-          <div class="modal-updated">
-            <span>📅 Last updated: 3 days ago</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal-seasons">
-      <h3>Seasons</h3>
-      <div class="season-list">
-        <div class="season-row">
-          <div>
-            <strong>Season 1: Stand-Up Stars</strong>
-            <div class="season-desc">Spotlight on rising comedians.</div>
-          </div>
-          <div class="season-episodes">8 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 2: Comedy Sketches</strong>
-            <div class="season-desc">Original sketches and improv fun.</div>
-          </div>
-          <div class="season-episodes">10 episodes</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Startup Stories Modal -->
-<div id="startupstories-modal" class="modal" style="display:none;">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeStartupStoriesModal()">&times;</span>
-    <div class="modal-header">
-      <h2>Startup Stories</h2>
-    </div>
-    <div class="modal-body">
-      <div class="modal-cover">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC-qtcbTj8dhLBpoSyI6c3TYcMbPclIkea8A&s" alt="Startup Stories Cover" />
-      </div>
-      <div class="modal-info">
-        <div class="modal-description">
-          <h3>Description</h3>
-          <p>
-            Discover the journeys of entrepreneurs and innovators. "Startup Stories" shares real experiences, challenges, and successes from the world of business and entrepreneurship.
-          </p>
-        </div>
-        <div class="modal-genres">
-          <h4>Genres</h4>
-          <div class="genres-list">
-            span class="genre-badge">Business</span>
-            <span class="genre-badge">Entrepreneurship</span>
-          </div>
-          <div class="modal-updated">
-            <span>📅 Last updated: 5 days ago</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal-seasons">
-      <h3>Seasons</h3>
-      <div class="season-list">
-        <div class="season-row">
-          <div>
-            <strong>Season 1: Founders' Beginnings</strong>
-            <div class="season-desc">How startups get started.</div>
-          </div>
-          <div class="season-episodes">9 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 2: Scaling Up</strong>
-            <div class="season-desc">Growing pains and breakthroughs.</div>
-          </div>
-          <div class="season-episodes">11 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 3: Pivot Points</strong>
-            <div class="season-desc">When plans change and why.</div>
-          </div>
-          <div class="season-episodes">7 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 4: Global Impact</strong>
-            <div class="season-desc">Startups making a difference worldwide.</div>
-          </div>
-          <div class="season-episodes">8 episodes</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Healthy Living Modal -->
-<div id="healthyliving-modal" class="modal" style="display:none;">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeHealthyLivingModal()">&times;</span>
-    <div class="modal-header">
-      <h2>Healthy Living</h2>
-    </div>
-    <div class="modal-body">
-      <div class="modal-cover">
-        <img src="https://blog.feedspot.com/wp-content/uploads/2018/10/health-podcast-copy.jpg" alt="Healthy Living Cover" />
-      </div>
-      <div class="modal-info">
-        <div class="modal-description">
-          <h3>Description</h3>
-          <p>
-            Your guide to a healthier, happier life. "Healthy Living" covers wellness, nutrition, fitness, and lifestyle tips from experts and real people.
-          </p>
-        </div>
-        <div class="modal-genres">
-          <h4>Genres</h4>
-          <div class="genres-list">
-            <span class="genre-badge">Health</span>
-            <span class="genre-badge">Lifestyle</span>
-          </div>
-          <div class="modal-updated">
-            <span>📅 Last updated: 1 day ago</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal-seasons">
-      <h3>Seasons</h3>
-      <div class="season-list">
-        <div class="season-row">
-          <div>
-            <strong>Season 1: Wellness Basics</strong>
-            <div class="season-desc">Foundations of healthy living.</div>
-          </div>
-          <div class="season-episodes">10 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 2: Nutrition Know-How</strong>
-            <div class="season-desc">Eating right for your body.</div>
-          </div>
-          <div class="season-episodes">12 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 3: Fitness Focus</strong>
-            <div class="season-desc">Workouts and movement tips.</div>
-          </div>
-          <div class="season-episodes">8 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 4: Mind Matters</strong>
-            <div class="season-desc">Mental health and mindfulness.</div>
-          </div>
-          <div class="season-episodes">7 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 5: Lifestyle Hacks</strong>
-            <div class="season-desc">Simple changes for big results.</div>
-          </div>
-          <div class="season-episodes">6 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 6: Real Stories</strong>
-            <div class="season-desc">Inspiring journeys to wellness.</div>
-          </div>
-          <div class="season-episodes">9 episodes</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Past & Present Modal -->
-<div id="pastpresent-modal" class="modal" style="display:none;">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closePastPresentModal()">&times;</span>
-    <div class="modal-header">
-      <h2>Past & Present</h2>
-    </div>
-    <div class="modal-body">
-      <div class="modal-cover">
-        <img src="https://discoverpods.com/wp-content/uploads/2024/02/Best-Podcast-About-History-Header-660x377.jpg" alt="Past & Present Cover" />
-      </div>
-      <div class="modal-info">
-        <div class="modal-description">
-          <h3>Description</h3>
-          <p>
-            Explore the events and people that shaped our world. "Past & Present" brings history to life with stories, interviews, and expert analysis.
-          </p>
-        </div>
-        <div class="modal-genres">
-          <h4>Genres</h4>
-          <div class="genres-list">
-            <span class="genre-badge">History</span>
-            <span class="genre-badge">Education</span>
-          </div>
-          <div class="modal-updated">
-            <span>📅 Last updated: 1 day ago</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal-seasons">
-      <h3>Seasons</h3>
-      <div class="season-list">
-        <div class="season-row">
-          <div>
-            <strong>Season 1: Ancient Civilizations</strong>
-            <div class="season-desc">The rise and fall of great empires.</div>
-          </div>
-          <div class="season-episodes">14 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 2: Turning Points</strong>
-            <div class="season-desc">Moments that changed history.</div>
-          </div>
-          <div class="season-episodes">12 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 3: Unsung Heroes</strong>
-            <div class="season-desc">Stories of lesser-known figures.</div>
-          </div>
-          <div class="season-episodes">10 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 4: Modern Times</strong>
-            <div class="season-desc">History in the making.</div>
-          </div>
-          <div class="season-episodes">8 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 5: Hidden Mysteries</strong>
-            <div class="season-desc">Unsolved puzzles from the past.</div>
-          </div>
-          <div class="season-episodes">7 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 6: Global Connections</strong>
-            <div class="season-desc">How cultures have influenced each other.</div>
-          </div>
-          <div class="season-episodes">9 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 7: The Present Era</strong>
-            <div class="season-desc">Recent events and their impact.</div>
-          </div>
-          <div class="season-episodes">6 episodes</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Sports Desk Modal -->
-<div id="sportsdesk-modal" class="modal" style="display:none;">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeSportsDeskModal()">&times;</span>
-    <div class="modal-header">
-      <h2>Sports Desk</h2>
-    </div>
-    <div class="modal-body">
-      <div class="modal-cover">
-        <img src="https://ichef.bbci.co.uk/images/ic/1200x675/p0bw3n71.jpg" alt="Sports Desk Cover" />
-      </div>
-      <div class="modal-info">
-        <div class="modal-description">
-          <h3>Description</h3>
-          <p>
-            All the latest from the world of sports. "Sports Desk" covers scores, stories, and interviews from every corner of the sporting world.
-          </p>
-        </div>
-        <div class="modal-genres">
-          <h4>Genres</h4>
-          <div class="genres-list">
-            <span class="genre-badge">Sports</span>
-            <span class="genre-badge">News</span>
-          </div>
-          <div class="modal-updated">
-            <span>📅 Last updated: 6 days ago</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal-seasons">
-      <h3>Seasons</h3>
-      <div class="season-list">
-        <div class="season-row">
-          <div>
-            <strong>Season 1: Game On</strong>
-            <div class="season-desc">Kickoff to the season's biggest games.</div>
-          </div>
-          <div class="season-episodes">12 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 2: Star Players</strong>
-            <div class="season-desc">Profiles of top athletes.</div>
-          </div>
-          <div class="season-episodes">14 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 3: Behind the Scenes</strong>
-            <div class="season-desc">Stories beyond the scoreboard.</div>
-          </div>
-          <div class="season-episodes">10 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 4: Global Sports</strong>
-            <div class="season-desc">International competitions and rivalries.</div>
-          </div>
-          <div class="season-episodes">8 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 5: The Fans</strong>
-            <div class="season-desc">Fan culture and community.</div>
-          </div>
-          <div class="season-episodes">7 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 6: Women's Sports</strong>
-            <div class="season-desc">Spotlight on women's leagues and athletes.</div>
-          </div>
-          <div class="season-episodes">9 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 7: Youth Leagues</strong>
-            <div class="season-desc">The next generation of stars.</div>
-          </div>
-          <div class="season-episodes">6 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 8: Season Recap</strong>
-            <div class="season-desc">Highlights and memorable moments.</div>
-          </div>
-          <div class="season-episodes">5 episodes</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Nature Lab Modal -->
-<div id="naturelab-modal" class="modal" style="display:none;">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeNatureLabModal()">&times;</span>
-    <div class="modal-header">
-      <h2>Nature Lab</h2>
-    </div>
-    <div class="modal-body">
-      <div class="modal-cover">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeRXFK0DY_9P54-tpSGESxcD3jqcQb9BF3xg&s" alt="Nature Lab Cover" />
-      </div>
-      <div class="modal-info">
-        <div class="modal-description">
-          <h3>Description</h3>
-          <p>
-            Explore the wonders of the natural world. "Nature Lab" brings you science, discovery, and stories from the wild, with experts and explorers.
-          </p>
-        </div>
-        <div class="modal-genres">
-          <h4>Genres</h4>
-          <div class="genres-list">
-            <span class="genre-badge">Science</span>
-            <span class="genre-badge">Nature</span>
-          </div>
-          <div class="modal-updated">
-            <span>📅 Last updated: 1 week ago</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal-seasons">
-      <h3>Seasons</h3>
-      <div class="season-list">
-        <div class="season-row">
-          <div>
-            <strong>Season 1: Into the Wild</strong>
-            <div class="season-desc">Adventures in untouched places.</div>
-          </div>
-          <div class="season-episodes">7 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 2: Animal Kingdom</strong>
-            <div class="season-desc">Life and survival in the animal world.</div>
-          </div>
-          <div class="season-episodes">9 episodes</div>
-        </div>
-        <div class="season-row">
-          <div>
-            <strong>Season 3: Earth Science</strong>
-            <div class="season-desc">How our planet works.</div>
-          </div>
-          <div class="season-episodes">8 episodes</div>
-        </div>
-      </div>
+      <div class="season-list" id="modal-seasons-list"></div>
     </div>
   </div>
 </div>
@@ -725,6 +169,6 @@
 </div>
 </footer>
   <!-- ENTRY POINT -->
-  <script type="module" src="js/main.js"></script>
+  <script type="module" src="main.js"></script>
 </body>
 </html>
