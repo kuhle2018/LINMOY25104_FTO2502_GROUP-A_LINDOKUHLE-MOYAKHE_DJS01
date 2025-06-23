@@ -21,8 +21,7 @@
 
   <!-- FILTERS (below header) -->
 <div class="filters">
-  <input id="search-input" type="text" placeholder="Search podcasts..." />
-  <label for="genre-select">Filter by:</label>
+    <label for="genre-select">Filter by:</label>
   <select id="genre-select" class="genre-dropdown">
     <option>All Genres</option>
     <option>Comedy</option>
@@ -53,68 +52,10 @@
    
 <!-- MAIN GRID --> 
 <main>
- <div id="podcast-container">
-<div class="podcast-card">
-<img src="https://dc-mkt-prod.cloud.bosch.tech/hu/media/campaigns/techtalk/techtalk_cover.jpg" alt="Tech talks" class="podcast-cover" />    
-<h3><strong>Tech Talk</strong></h3>
-<p> 4 Seasons</p>
-<p><strong>Genre:</strong> Technology , Business</p>
-<div class="podcast-updated">Updated 2 days ago</p>
-</div>
-
-<div class="podcast-card">
-  <img src="https://marketplace.canva.com/EAFvFNP4kZE/2/0/1600w/canva-black-red-bold-collage-podcast-cover-AFRpXsUBk2E.jpg" alt="Crime Files" class="podcast-cover" /> 
-  <h3><strong>Crime Files</strong></h3>
-  <p> 6 Seasons</p>
-  <p><strong>Genre:</strong> True crime , Mystery</p>
-<p><strong>Genre:</strong> Technology , Business</p>
-  <div class="podcast-updated">Updated 2 weeks ago</div>
-  </div>
-
-  <div class="podcast-card">
-    <img src="https://media.invisioncic.com/j283755/monthly_2024_09/laugh-lounge-logo_3x2.jpeg.374e9b4e66b23ea0bc544dda5ed3df0d.jpeg" alt="Laugh Lounge" class="podcast-cover" />
-    <h3><strong>Laugh Lounge</strong></h3>
-    <p> 2 Seasons</p>
-    <p><strong>Genre:</strong> Comedy , Entertainment</p>
-    <div class="podcast-updated">Updated 3 days ago</div>
-  </div>
-
-  <div class="podcast-card">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC-qtcbTj8dhLBpoSyI6c3TYcMbPclIkea8A&s" alt="Startup stories" class="podcast-cover" />
-    <h3><strong>Startup Stories</strong></h3>
-    <p> 4 Seasons</p>
-    <p><strong>Genre:</strong> Business , Entrepreneurship</p>
-    <div class="podcast-updated">Updated 5 days ago</div>
-    </div>
-
-    <img src="https://blog.feedspot.com/wp-content/uploads/2018/10/health-podcast-copy.jpg" alt="Healthy Living" class="podcast-cover" />
-    <h3><strong>Healthy Living</strong></h3>
-    <p> 6 Seasons</p>
-    <p><strong>Genre:</strong> Health , Lifesyle</p>
-    <div class="podcast-updated">Updated 1 day ago</div>
-  </div>
-
-<div class="podcast-card">
-  <img src="https://discoverpods.com/wp-content/uploads/2024/02/Best-Podcast-About-History-Header-660x377.jpg" alt="Past and Present" class="podcast-cover" />
-  <h3><strong>Past & Present</strong></h3>
-  <p> 7 Seasons</p>
-  <p><strong>Genre:</strong> History , Education</p>
-  <div class="podcast-updated">Updated 1 day ago</div>
-</div>
-
-<div class="podcast-card">
-  <img src="https://ichef.bbci.co.uk/images/ic/1200x675/p0bw3n71.jpg" alt="Sports Desk" class="podcast-cover" />
-  <h3><strong>Sports Desk</strong></h3>
-  <p> 8 Seasons</p>
-  <p><strong>Genre:</strong> Sports , News</p>
-  <div class="podcast-updated">Updated 6 days ago</div>
-</div>
-
- <div class="podcast-card">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeRXFK0DY_9P54-tpSGESxcD3jqcQb9BF3xg&s" alt="Nature Lab" class="podcast-cover" />
-  <h3><strong>Nature Lab</strong></h3><p> 3 Seasons</p>
-  <p><strong>Genre:</strong> Science , Nature</p>
-  <div class="podcast-updated">Updated 1 week ago</div>
+  <div id="podcast-container">
+    <!-- JS will render podcast cards here-->
+ </div>
+</main>
 
 <!-- Podcast Modal (single, dynamic) -->
 <div id="podcast-modal" class="modal" style="display:none;">
@@ -145,6 +86,15 @@
       <h3>Seasons</h3>
       <div class="season-list" id="modal-seasons-list"></div>
     </div>
+  </div>
+</div>
+
+<!-- Search Modal -->
+<div id="search-modal" class="modal" style="display:none;">
+  <div class="modal-content" style="max-width:400px;">
+    <span class="close-btn" id="search-modal-close">&times;</span>
+    <h2>Search Podcasts</h2>
+    <input id="modal-search-input" type="text" placeholder="Type to search..." style="width:100%;padding:10px;font-size:1.1em;" />
   </div>
 </div>
 

@@ -8,7 +8,7 @@ const podcasts = [
     cover: "https://dc-mkt-prod.cloud.bosch.tech/hu/media/campaigns/techtalk/techtalk_cover.jpg",
     seasons: 4,
     genres: ["Technology", "Business"],
-    updated: "2 days ago",
+    updated: "2025-06-21T09:00:00Z",
     description: "Join us every week as we dive deep into the latest technology trends, innovations, and industry insights. From artificial intelligence and machine learning to startup culture and digital transformation, we explore the forces shaping our digital future. Each episode features expert interviews, case studies, and actionable insights for professionals and enthusiasts alike.",
     seasonList: [
       { title: "Season 1: Getting Started", desc: "Introduction to the fundamentals", episodes: 12 },
@@ -22,7 +22,7 @@ const podcasts = [
     cover: "https://marketplace.canva.com/EAFvFNP4kZE/2/0/1600w/canva-black-red-bold-collage-podcast-cover-AFRpXsUBk2E.jpg",
     seasons: 6,
     genres: ["True Crime", "Mystery"],
-    updated: "2 weeks ago",
+    updated: "2025-06-08T14:00:00Z",
     description: "Dive into the world of unsolved mysteries and gripping investigations. 'Crime Files' explores real-life cases, forensic breakthroughs, and the minds behind the crimes. Each episode brings you closer to the truth with expert interviews and dramatic storytelling.",
     seasonList: [
       { title: "Season 1: The First Case", desc: "A look at the origins of the series' most infamous case.", episodes: 10 },
@@ -38,7 +38,7 @@ const podcasts = [
     cover: "https://media.invisioncic.com/j283755/monthly_2024_09/laugh-lounge-logo_3x2.jpeg.374e9b4e66b23ea0bc544dda5ed3df0d.jpeg",
     seasons: 2,
     genres: ["Comedy", "Entertainment"],
-    updated: "3 days ago",
+    updated: "2025-06-19T17:00:00Z",
     description: "Unwind and laugh out loud with the best comedians and entertainers. 'Laugh Lounge' brings you stand-up, sketches, and hilarious conversations every week.",
     seasonList: [
       { title: "Season 1: Stand-Up Stars", desc: "Spotlight on rising comedians.", episodes: 8 },
@@ -50,7 +50,7 @@ const podcasts = [
     cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC-qtcbTj8dhLBpoSyI6c3TYcMbPclIkea8A&s",
     seasons: 4,
     genres: ["Business", "Entrepreneurship"],
-    updated: "5 days ago",
+    updated: "2025-06-16T11:00:00Z",
     description: "Discover the journeys of entrepreneurs and innovators. 'Startup Stories' shares real experiences, challenges, and successes from the world of business and entrepreneurship.",
     seasonList: [
       { title: "Season 1: Founders' Beginnings", desc: "How startups get started.", episodes: 9 },
@@ -64,7 +64,7 @@ const podcasts = [
     cover: "https://blog.feedspot.com/wp-content/uploads/2018/10/health-podcast-copy.jpg",
     seasons: 6,
     genres: ["Health", "Lifestyle"],
-    updated: "1 day ago",
+    updated: "2025-06-20T08:00:00Z",
     description: "Your guide to a healthier, happier life. 'Healthy Living' covers wellness, nutrition, fitness, and lifestyle tips from experts and real people.",
     seasonList: [
       { title: "Season 1: Wellness Basics", desc: "Foundations of healthy living.", episodes: 10 },
@@ -80,7 +80,7 @@ const podcasts = [
     cover: "https://discoverpods.com/wp-content/uploads/2024/02/Best-Podcast-About-History-Header-660x377.jpg",
     seasons: 7,
     genres: ["History", "Education"],
-    updated: "1 day ago",
+    updated: "2025-06-18T13:00:00Z",
     description: "Explore the events and people that shaped our world. 'Past & Present' brings history to life with stories, interviews, and expert analysis.",
     seasonList: [
       { title: "Season 1: Ancient Civilizations", desc: "The rise and fall of great empires.", episodes: 14 },
@@ -97,7 +97,7 @@ const podcasts = [
     cover: "https://ichef.bbci.co.uk/images/ic/1200x675/p0bw3n71.jpg",
     seasons: 8,
     genres: ["Sports", "News"],
-    updated: "6 days ago",
+    updated: "2025-06-15T15:00:00Z",
     description: "All the latest from the world of sports. 'Sports Desk' covers scores, stories, and interviews from every corner of the sporting world.",
     seasonList: [
       { title: "Season 1: Game On", desc: "Kickoff to the season's biggest games.", episodes: 12 },
@@ -115,7 +115,7 @@ const podcasts = [
     cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeRXFK0DY_9P54-tpSGESxcD3jqcQb9BF3xg&s",
     seasons: 3,
     genres: ["Science", "Nature"],
-    updated: "1 week ago",
+    updated: "2025-06-10T12:00:00Z",
     description: "Explore the wonders of the natural world. 'Nature Lab' brings you science, discovery, and stories from the wild, with experts and explorers.",
     seasonList: [
       { title: "Season 1: Into the Wild", desc: "Adventures in untouched places.", episodes: 7 },
@@ -163,3 +163,36 @@ sortSelect.addEventListener('change', filterAndRender);
 
 // Initial render
 renderPodcasts(podcasts, openModal);
+
+// ...existing code...
+
+const searchIcon = document.getElementById('search');
+const searchModal = document.getElementById('search-modal');
+const searchModalClose = document.getElementById('search-modal-close');
+const modalSearchInput = document.getElementById('modal-search-input');
+const mainSearchInput = document.getElementById('search-input');
+
+if (searchIcon && searchModal && searchModalClose && modalSearchInput) {
+  searchIcon.addEventListener('click', () => {
+    searchModal.style.display = 'flex';
+    setTimeout(() => modalSearchInput.focus(), 100);
+  });
+
+  searchModalClose.addEventListener('click', () => {
+    searchModal.style.display = 'none';
+  });
+
+  // Optional: Close modal when clicking outside content
+  searchModal.addEventListener('click', (e) => {
+    if (e.target === searchModal) searchModal.style.display = 'none';
+  });
+
+  // Sync modal search input with main search input
+  modalSearchInput.addEventListener('input', (e) => {
+    if (mainSearchInput) {
+      mainSearchInput.value = e.target.value;
+      // Optionally trigger your filter function here
+      if (typeof filterAndRender === 'function') filterAndRender();
+    }
+  });
+}
